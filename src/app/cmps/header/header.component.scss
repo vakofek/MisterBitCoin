@@ -1,0 +1,61 @@
+@import url("https://fonts.googleapis.com/css2?family=Prosto+One&display=swap");
+
+Header {
+    height: 200px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    img {
+        width: 40px;
+        height: 40px;
+        object-fit: contain;
+    }
+
+    nav {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+    }
+
+    button {
+        border: none;
+        background-color: transparent;
+        color: rgb(100, 100, 100);
+        font-family: Montserrat, sans-serif;
+        font-size: 18px;
+        font-weight: 600;
+        cursor: pointer;
+        padding: 12px 25px;
+        border-radius: 30px;
+        transition: color 0.4s ease-in-out, background-color 0.4s ease-in-out;
+
+        &:hover {
+            background-color: rgb(32, 32, 32);
+            color: white;
+        }
+    }
+    .logo {
+        display: flex;
+        align-items: center;
+        gap: 20px;
+
+        h1 {
+            margin: 0 0;
+            font-family: Prosto One, sans-serif;
+        }
+    }
+    .login-container {
+        display: flex;
+        gap: 25px;
+
+        button:last-child {
+            color: white;
+            background-color: rgb(14, 13, 13);
+        }
+    }
+}
+
+.container {
+    margin: 0px 4rem;
+}

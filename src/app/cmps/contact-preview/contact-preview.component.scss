@@ -1,0 +1,25 @@
+.contact-preview {
+    border: 1px solid #d1d1d1;
+    border-radius: 60px;
+    padding: 10px 30px;
+    width: 30vw;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+
+    cursor: pointer;
+    transition: box-shadow 0.3s ease-in-out;
+    &:hover {
+        box-shadow: 0 0 10px 0 #0000003d;
+    }
+    img {
+        height: 50px;
+        width: 50px;
+        border-radius: 50%;
+        box-shadow: 0 0 7px 0 #0000003d;
+    }
+
+    h2 {
+        margin: 0 0;
+    }
+}

@@ -1,0 +1,39 @@
+.home-page {
+    main {
+        display: flex;
+        align-items: center;
+        gap: 30px;
+
+        img {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            object-fit: contain;
+        }
+    }
+
+    .hero {
+        background-image: url(https://crownleadership.com/wp-content/uploads/2016/06/business-background-picture-wide-hd-cool-wallpaper-8548.jpg);
+        background-repeat: no-repeat;
+        padding: 125px 0;
+        
+        h1 {
+            font-size: 110px;
+            line-height: 120px;
+            font-weight: 200;
+            max-width: 60vw;
+            margin-left: 4rem;
+        }
+        p {
+            color: rgb(7, 7, 7);
+            font-family: Montserrat, sans-serif;
+            font-size: 28px;
+            font-weight: 600;
+            margin-left: 4rem;
+        }
+    }
+}
+
+.container {
+    margin: 0px 4rem;
+}

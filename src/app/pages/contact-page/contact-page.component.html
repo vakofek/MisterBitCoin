@@ -1,0 +1,10 @@
+<div class="contact-page">
+
+    <contact-details *ngIf="selectedContactId;else contactList" [selectedContactId]="selectedContactId"
+        (onSelectContact)="onSelectContact($event)"></contact-details>
+
+    <ng-template #contactList>
+        <contact-filter [filterBy]="filterBy" (onFilter)="onSetFilter($event)"></contact-filter>
+        <contact-list [contacts]="contacts$|async" (onSelectContact)="onSelectContact($event)"></contact-list>
+    </ng-template>
+</div>
