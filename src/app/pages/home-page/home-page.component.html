@@ -1,8 +1,8 @@
 <div class="home-page">
 
-    <main class="container">
+    <main class="container" *ngIf="user">
         <img src="https://ca.slack-edge.com/T01JRLNVCEA-U01PPC1SGAE-78dd2554dd0f-512" />
-        <div class="user-details">
+        <div class="user-details" >
             <h2>Hello {{user.name}}</h2>
             <h4>Coins: {{user.coins}}</h4>
             <h4>BTC: {{getCurrValue().y}}</h4>

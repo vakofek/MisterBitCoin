@@ -8,9 +8,9 @@ import { Component } from '@angular/core';
 export class AppComponent {
   title = 'MisterBitCoin';
 
-  selectedPage: string = 'home'
+  // selectedPage: string = 'home'
 
-  onSetPage(selectedPage: string) {
-    this.selectedPage = selectedPage;
-  }
+  // onSetPage(selectedPage: string) {
+  //   this.selectedPage = selectedPage;
+  // }
 }

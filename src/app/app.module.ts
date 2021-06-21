@@ -16,6 +16,9 @@ import { HttpClientModule } from '@angular/common/http';
 import { ChartPageComponent } from './pages/chart-page/chart-page.component';
 import { GoogleChartsModule } from 'angular-google-charts';
 import { HeaderComponent } from './cmps/header/header.component';
+import { LoginComponent } from './pages/login/login.component';
+import { ContactEditComponent } from './pages/contact-edit/contact-edit.component';
+import { SingupComponent } from './pages/singup/singup.component';
 
 @NgModule({
   declarations: [
@@ -29,7 +32,10 @@ import { HeaderComponent } from './cmps/header/header.component';
     ContactFilterComponent,
     ContactDetailsComponent,
     ChartPageComponent,
-    HeaderComponent
+    HeaderComponent,
+    LoginComponent,
+    ContactEditComponent,
+    SingupComponent
   ],
   imports: [
     BrowserModule,

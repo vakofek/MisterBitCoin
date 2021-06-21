@@ -8,11 +8,12 @@ import { Contact } from 'src/app/model/contact.model';
 })
 export class ContactPreviewComponent implements OnInit {
   @Input() contact: Contact
-  @Output() onSelectContact = new EventEmitter();
+  
   constructor() { }
   contactImgNumber: number = Date.now() % 100
 
   ngOnInit(): void {
+    
   }
 
 }

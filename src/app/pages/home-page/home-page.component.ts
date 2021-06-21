@@ -19,7 +19,7 @@ export class HomePageComponent implements OnInit {
   bitcoinValues: any = null
 
   ngOnInit(): void {
-    this.subscription = this.userService.getUser().subscribe(user => { this.user = user });
+    this.subscription = this.userService.user$.subscribe((user: User) => {this.user = user });
     this.bitcoinValues = this.bitconService.getMarketPrice();
   }
 

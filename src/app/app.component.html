@@ -1,9 +1,11 @@
 <div class="app">
 
-    <app-header (onSetPage)="onSetPage($event)"></app-header>
+    <app-header></app-header>
 
-    <home-page *ngIf="selectedPage === 'home'"></home-page>
+    <router-outlet></router-outlet>
+
+    <!-- <home-page *ngIf="selectedPage === 'home'"></home-page>
     <contact-page *ngIf="selectedPage === 'contact'"></contact-page>
-    <chart-page *ngIf="selectedPage === 'chart'"></chart-page>
+    <chart-page *ngIf="selectedPage === 'chart'"></chart-page> -->
 
 </div>

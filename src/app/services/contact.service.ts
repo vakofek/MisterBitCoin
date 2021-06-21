@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { Observable, BehaviorSubject,of } from 'rxjs';
+import { Observable, BehaviorSubject, of } from 'rxjs';
 import { Contact } from '../model/contact.model';
 
 const CONTACTS = [
@@ -149,7 +149,20 @@ export class ContactService {
     const contact = this._contactsDb.find(contact => contact._id === id)
 
     //return an observable
-    return contact ? of(contact) : Observable.throw(`Contact id ${id} not found!`)
+    return contact ? of({ ...contact }) : of(null)
+  }
+
+  public getNeighborContactId(id: string, type: string): Observable<string> {
+    let nextContactId: string
+    var currContactIdx = this._contactsDb.findIndex(contact => contact._id === id)
+    if (type === 'next') {
+      if (currContactIdx + 1 === this._contactsDb.length) currContactIdx = -1
+      nextContactId = this._contactsDb[currContactIdx + 1]._id
+    } else {
+      if (currContactIdx === 0) currContactIdx = this._contactsDb.length
+      nextContactId = this._contactsDb[currContactIdx - 1]._id
+    }
+    return of(nextContactId)
   }
 
   public deleteContact(id: string) {
@@ -158,10 +171,15 @@ export class ContactService {
 
     // change the observable data in the service - let all the subscribers know
     this._contacts$.next(this._contactsDb)
+    return of('Removed')
   }
 
   public saveContact(contact: Contact) {
     return contact._id ? this._updateContact(contact) : this._addContact(contact)
+  }
+
+  public getEmptyContact(){
+    return {name: '' , email: '' , phone: ''}
   }
 
   private _updateContact(contact: Contact) {
@@ -169,6 +187,7 @@ export class ContactService {
     this._contactsDb = this._contactsDb.map(c => contact._id === c._id ? contact : c)
     // change the observable data in the service - let all the subscribers know
     this._contacts$.next(this._sort(this._contactsDb))
+    return of('Updated')
   }
 
   private _addContact(contact: Contact) {
@@ -192,7 +211,7 @@ export class ContactService {
     })
   }
 
-  private _filter(contacts: Contact[], term:string) {
+  private _filter(contacts: Contact[], term: string) {
     term = term.toLocaleLowerCase()
     return contacts.filter(contact => {
       return contact.name.toLocaleLowerCase().includes(term) ||

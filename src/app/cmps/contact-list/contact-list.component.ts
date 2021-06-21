@@ -8,11 +8,9 @@ import { Contact } from 'src/app/model/contact.model';
 })
 export class ContactListComponent implements OnInit {
   @Input() contacts: Contact[]
-  @Output() onSelectContact = new EventEmitter();
   constructor() { }
 
   ngOnInit() {
-    console.log('contacts:', this.contacts)
   }
 
 }

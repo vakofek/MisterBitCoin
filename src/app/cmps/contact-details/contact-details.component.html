@@ -1,7 +1,11 @@
 <div class="contact-details">
+    <button (click)="onGoBack()">Go Back</button>
+    <a [routerLink]="['/contact' , contact._id, 'edit']">Edit</a>
+
     <img src="https://randomuser.me/api/portraits/men/1.jpg" />
     <h2>{{contact.name}}</h2>
     <h4>{{contact.email}}</h4>
     <h4>{{contact.phone}}</h4>
-    <button (click)="onSelectContact.emit(null)">Go Back</button>
+    <button (click)="onGoNeighborContact('back')">previous</button>
+    <button (click)="onGoNeighborContact('next')">Next</button>
 </div>

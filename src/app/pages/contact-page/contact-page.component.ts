@@ -13,12 +13,13 @@ export class ContactPageComponent implements OnInit {
 
   filterBy = { term: '' }
   contacts$: Observable<Contact[]>
-  selectedContactId: string = null
+
+  // selectedContactId: string = null
   constructor(private contactService: ContactService) { }
 
   ngOnInit(): void {
     this.contactService.loadContacts()
-    this.contacts$ = this.contactService.contacts$
+    this.contacts$ = this.contactService.contacts$   
   }
 
   onSetFilter(filterBy: FilterBy) {
@@ -26,9 +27,9 @@ export class ContactPageComponent implements OnInit {
     this.contactService.loadContacts(this.filterBy)
   }
 
-  onSelectContact(contactId: string) {
-    this.selectedContactId = contactId;
-  }
+  // onSelectContact(contactId: string) {
+  //   this.selectedContactId = contactId;
+  // }
 
 
 }

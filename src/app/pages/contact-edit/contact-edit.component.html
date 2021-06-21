@@ -1,0 +1,11 @@
+<div class="contact-edit">
+    <button (click)="onRemoveContact()">Remove</button>
+    <button (click)="onGoBack()">Go Back</button>
+    <img src="https://randomuser.me/api/portraits/men/1.jpg" />
+    <form (submit)="onSaveContact()">
+        <input type="text" name="name" [(ngModel)]="contact.name" placeholder="contact name" >
+        <input type="text" name="email" [(ngModel)]="contact.email" placeholder="contact email" >
+        <input type="text" name="phone" [(ngModel)]="contact.phone" placeholder="contact phone" >
+        <button>Save</button>
+    </form>
+</div>

@@ -1,19 +1,18 @@
 <Header class="container">
     <div class="logo">
-        <img
-            src="https://png2.cleanpng.com/sh/2242314995fa431fa0fbd333f6615528/L0KzQYm3V8AyN517iZH0aYP2gLBuTfRqb5p5ed42d3HvfLb7TfNwdaF6jNd7LXnmf7B6TfNwcZ8yiOd7c3WwfLFCgfx1gV51Rdl4b3SwgMPwgBUuPZM4UKo8M0S1dorthcEvPWE1Uas5NUa0RYS3VMMxOmc1SasAMT7zfri=/kisspng-digital-wallet-computer-icons-coin-purse-loyalty-p-good-price-5b3883342f9fe1.5009905615304302601951.png" />
+        <img src="../../../assets/logo.png" alt="logo" />
         <h1>BitApp</h1>
     </div>
     <nav>
-        <button (click)="onSetPage.emit('home')">Home</button>
+        <a routerLink="" routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}">Home</a>
         <span>·</span>
-        <button (click)="onSetPage.emit('contact')">Contacts</button>
+        <a routerLink="contact" routerLinkActive="active">Contacts</a>
         <span>·</span>
-        <button (click)="onSetPage.emit('chart')">Charts</button>
+        <a routerLink="chart" routerLinkActive="active">Charts</a>
     </nav>
     <div class="login-container">
-        <button (click)="onSetPage.emit('home')">Sign in</button>
-        <button (click)="onSetPage.emit('home')">Sign up</button>
+        <a routerLink="login" routerLinkActive="active" *ngIf="!user">Log in</a>
+        <button (click)="onLogout()" *ngIf="user">Log out</button>
 
     </div>
 </Header>
