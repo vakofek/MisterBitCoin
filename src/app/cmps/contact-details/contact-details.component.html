@@ -1,13 +1,17 @@
 <div class="contact-details">
-    <button (click)="onGoBack()">Go Back</button>
-    <a [routerLink]="['/contact' , contact._id, 'edit']">Edit</a>
 
+    <div class="container">
+        <button (click)="onGoBack()">Back</button>
+        <a [routerLink]="['/contact' , contact._id, 'edit']">Edit</a>
+    </div>
     <img [src]="contact.imgUrl" />
     <h2>{{contact.name}}</h2>
     <h4>{{contact.email}}</h4>
     <h4>{{contact.phone}}</h4>
-    <button (click)="onGoNeighborContact('back')">previous</button>
-    <button (click)="onGoNeighborContact('next')">Next</button>
+    <div>
+        <button (click)="onGoNeighborContact('back')">previous</button>
+        <button (click)="onGoNeighborContact('next')">Next</button>
+    </div>
 
     <p *ngIf="loggedInUser">Transfer to {{contact.name}} <button (click)="onTransferChange(-1)">-</button>
         <span>{{coinsToTransfer}}</span>

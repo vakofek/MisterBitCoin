@@ -5,6 +5,7 @@ Header {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    position: relative;
 
     img {
         width: 40px;
@@ -16,9 +17,13 @@ Header {
         display: flex;
         align-items: center;
         gap: 10px;
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
     }
 
-    a {
+    a,
+    button {
         border: none;
         background-color: transparent;
         color: rgb(100, 100, 100);
