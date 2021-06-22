@@ -1,14 +1,51 @@
 .home-page {
     main {
+        margin-bottom: 40px;
         display: flex;
-        align-items: center;
-        gap: 30px;
+        align-items: flex-start;
+        justify-content: space-between;
+        gap: 10vw;
 
-        img {
-            width: 120px;
-            height: 120px;
-            border-radius: 50%;
-            object-fit: contain;
+        > * {
+            display: flex;
+            width: 35%;
+        }
+        > div:first-child {
+            display: flex;
+            flex-direction: column;
+        }
+        > :last-child {
+            flex: 1;
+        }
+
+        .user-details {
+            display: flex;
+            gap: 20px;
+            align-items: center;
+            img {
+                width: 120px;
+                height: 120px;
+                border-radius: 50%;
+                object-fit: contain;
+            }
+        }
+        .add-to-wallet {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            gap: 10px;
+
+            div {
+                display: flex;
+                align-items: center;
+                gap: 5px;
+                input {
+                    padding: 10px 20px;
+                }
+                button {
+                    padding: 10px 10px;
+                }
+            }
         }
     }
 
@@ -16,7 +53,7 @@
         background-image: url(https://crownleadership.com/wp-content/uploads/2016/06/business-background-picture-wide-hd-cool-wallpaper-8548.jpg);
         background-repeat: no-repeat;
         padding: 125px 0;
-        
+
         h1 {
             font-size: 110px;
             line-height: 120px;

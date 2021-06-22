@@ -12,24 +12,25 @@ export class LoginComponent implements OnInit {
   constructor(
     private userService: UserService,
     private router: Router
-    ) { }
+  ) { }
 
-    err = ""
+  err = ""
 
-  credentials = {username: '' , password: ''}
+  credentials = { username: '', password: '' }
 
   ngOnInit(): void {
+    this.userService.loadUsersDB();
   }
 
-  async onLoginUser(){
+  async onLoginUser() {
     const res = await this.userService.login(this.credentials).toPromise()
-    if (res){
+    if (res) {
       console.log(res);
-      
+
       this.err = ""
       this.router.navigate(['/'])
     }
-    else{
+    else {
       this.err = "Login Failed!"
     }
   }

@@ -3,6 +3,9 @@ export interface Contact {
     name: string
     email: string
     phone: string
+    move: any
+    coins: number
+    imgUrl: string
 }
 
 

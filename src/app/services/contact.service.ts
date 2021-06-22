@@ -2,121 +2,76 @@ import { Injectable } from '@angular/core';
 import { Observable, BehaviorSubject, of } from 'rxjs';
 import { Contact } from '../model/contact.model';
 
+// { type: 'from / to', userId:'string',  coins: number }
+
 const CONTACTS = [
   {
     "_id": "5a56640269f443a5d64b32ca",
-    "name": "Ochoa Hyde",
+    "coins": 0,
+    "move": [] = [],
+    "imgUrl": "https://randomuser.me/api/portraits/men/1.jpg", "name": "Ochoa Hyde",
     "email": "ochoahyde@renovize.com",
     "phone": "+1 (968) 593-3824"
   },
   {
     "_id": "5a5664025f6ae9aa24a99fde",
-    "name": "Hallie Mclean",
+    "coins": 0, "move": [] = [], "imgUrl": "https://randomuser.me/api/portraits/men/2.jpg", "name": "Hallie Mclean",
     "email": "halliemclean@renovize.com",
     "phone": "+1 (948) 464-2888"
   },
   {
     "_id": "5a56640252d6acddd183d319",
-    "name": "Parsons Norris",
+    "coins": 0, "move": [] = [], "imgUrl": "https://randomuser.me/api/portraits/men/12.jpg", "name": "Parsons Norris",
     "email": "parsonsnorris@renovize.com",
     "phone": "+1 (958) 502-3495"
   },
   {
     "_id": "5a566402ed1cf349f0b47b4d",
-    "name": "Rachel Lowe",
+    "coins": 0, "move": [] = [], "imgUrl": "https://randomuser.me/api/portraits/men/3.jpg", "name": "Rachel Lowe",
     "email": "rachellowe@renovize.com",
     "phone": "+1 (911) 475-2312"
   },
   {
     "_id": "5a566402abce24c6bfe4699d",
-    "name": "Dominique Soto",
+    "coins": 0, "move": [] = [], "imgUrl": "https://randomuser.me/api/portraits/men/4.jpg", "name": "Dominique Soto",
     "email": "dominiquesoto@renovize.com",
     "phone": "+1 (807) 551-3258"
   },
   {
     "_id": "5a566402a6499c1d4da9220a",
-    "name": "Shana Pope",
+    "coins": 0, "move": [] = [], "imgUrl": "https://randomuser.me/api/portraits/men/5.jpg", "name": "Shana Pope",
     "email": "shanapope@renovize.com",
     "phone": "+1 (970) 527-3082"
   },
   {
     "_id": "5a566402f90ae30e97f990db",
-    "name": "Faulkner Flores",
+    "coins": 0, "move": [] = [], "imgUrl": "https://randomuser.me/api/portraits/men/6.jpg", "name": "Faulkner Flores",
     "email": "faulknerflores@renovize.com",
     "phone": "+1 (952) 501-2678"
   },
   {
     "_id": "5a5664027bae84ef280ffbdf",
-    "name": "Holder Bean",
+    "coins": 0, "move": [] = [], "imgUrl": "https://randomuser.me/api/portraits/men/7.jpg", "name": "Holder Bean",
     "email": "holderbean@renovize.com",
     "phone": "+1 (989) 503-2663"
   },
   {
     "_id": "5a566402e3b846c5f6aec652",
-    "name": "Rosanne Shelton",
+    "coins": 0, "move": [] = [], "imgUrl": "https://randomuser.me/api/portraits/men/8.jpg", "name": "Rosanne Shelton",
     "email": "rosanneshelton@renovize.com",
     "phone": "+1 (968) 454-3851"
   },
   {
     "_id": "5a56640272c7dcdf59c3d411",
-    "name": "Pamela Nolan",
+    "coins": 0, "move": [] = [], "imgUrl": "https://randomuser.me/api/portraits/men/9.jpg", "name": "Pamela Nolan",
     "email": "pamelanolan@renovize.com",
     "phone": "+1 (986) 545-2166"
   },
   {
     "_id": "5a5664029a8dd82a6178b15f",
-    "name": "Roy Cantu",
+    "coins": 0, "move": [] = [], "imgUrl": "https://randomuser.me/api/portraits/men/10.jpg", "name": "Roy Cantu",
     "email": "roycantu@renovize.com",
     "phone": "+1 (929) 571-2295"
-  },
-  {
-    "_id": "5a5664028c096d08eeb13a8a",
-    "name": "Ollie Christian",
-    "email": "olliechristian@renovize.com",
-    "phone": "+1 (977) 419-3550"
-  },
-  {
-    "_id": "5a5664026c53582bb9ebe9d1",
-    "name": "Nguyen Walls",
-    "email": "nguyenwalls@renovize.com",
-    "phone": "+1 (963) 471-3181"
-  },
-  {
-    "_id": "5a56640298ab77236845b82b",
-
-    "name": "Glenna Santana",
-    "email": "glennasantana@renovize.com",
-    "phone": "+1 (860) 467-2376"
-  },
-  {
-    "_id": "5a56640208fba3e8ecb97305",
-    "name": "Malone Clark",
-    "email": "maloneclark@renovize.com",
-    "phone": "+1 (818) 565-2557"
-  },
-  {
-    "_id": "5a566402abb3146207bc4ec5",
-    "name": "Floyd Rutledge",
-    "email": "floydrutledge@renovize.com",
-    "phone": "+1 (807) 597-3629"
-  },
-  {
-    "_id": "5a56640298500fead8cb1ee5",
-    "name": "Grace James",
-    "email": "gracejames@renovize.com",
-    "phone": "+1 (959) 525-2529"
-  },
-  {
-    "_id": "5a56640243427b8f8445231e",
-    "name": "Tanner Gates",
-    "email": "tannergates@renovize.com",
-    "phone": "+1 (978) 591-2291"
-  },
-  {
-    "_id": "5a5664025c3abdad6f5e098c",
-    "name": "Lilly Conner",
-    "email": "lillyconner@renovize.com",
-    "phone": "+1 (842) 587-3812"
   }
 ];
 
@@ -178,8 +133,17 @@ export class ContactService {
     return contact._id ? this._updateContact(contact) : this._addContact(contact)
   }
 
-  public getEmptyContact(){
-    return {name: '' , email: '' , phone: ''}
+  public getEmptyContact() {
+    return { name: '', email: '', phone: '' }
+  }
+
+  public setMove(move: {}, contactId: string) {
+    const contacts = this._contactsDb.map(contact => {
+      if (contact._id === contactId) contact.move.push(move)
+      return contact
+    })
+    this._contactsDb = contacts;
+    this._contacts$.next(contacts)
   }
 
   private _updateContact(contact: Contact) {
@@ -193,7 +157,8 @@ export class ContactService {
   private _addContact(contact: Contact) {
     //mock the server work
     const newContact: Contact = contact;
-    newContact._id = Date.now() % 100 + 'c';
+    newContact._id = this._makeId();
+    newContact.imgUrl = `https://randomuser.me/api/portraits/${Math.random() < 0.5 ? 'men' : 'women'}/${this._getRandomInt(1, 100)}.jpg`
     this._contactsDb.push(newContact)
     this._contacts$.next(this._sort(this._contactsDb))
   }
@@ -218,5 +183,20 @@ export class ContactService {
         contact.phone.toLocaleLowerCase().includes(term) ||
         contact.email.toLocaleLowerCase().includes(term)
     })
+  }
+
+  private _makeId(length = 6) {
+    var txt = '';
+    var possible = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
+    for (var i = 0; i < length; i++) {
+      txt += possible.charAt(Math.floor(Math.random() * possible.length));
+    }
+    return txt;
+  }
+
+  private _getRandomInt(min: number, max: number) {
+    min = Math.ceil(min);
+    max = Math.floor(max);
+    return Math.floor(Math.random() * (max - min + 1)) + min;
   }
 }

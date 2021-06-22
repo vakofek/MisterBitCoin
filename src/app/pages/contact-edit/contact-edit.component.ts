@@ -35,10 +35,10 @@ export class ContactEditComponent implements OnInit {
   }
 
   onGoBack() {
-    this.router.navigate(['/contact', this.contact._id])
+    this.contact._id ? this.router.navigate(['/contact', this.contact._id]) : this.router.navigate(['/contact'])
   }
 
-  async onSaveContact(){
+  async onSaveContact() {
     await this.contactService.saveContact(this.contact)
     this.router.navigate(['/contact', this.contact._id])
   }

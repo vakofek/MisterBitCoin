@@ -17,9 +17,10 @@ export class HomePageComponent implements OnInit {
   user: User = null
   // bitcoinValues = this.bitconService.getBitcoinValue()
   bitcoinValues: any = null
+  coins: number = 0
 
   ngOnInit(): void {
-    this.subscription = this.userService.user$.subscribe((user: User) => {this.user = user });
+    this.subscription = this.userService.user$.subscribe((user: User) => { this.user = user });
     this.bitcoinValues = this.bitconService.getMarketPrice();
   }
 
@@ -30,5 +31,12 @@ export class HomePageComponent implements OnInit {
   getCurrValue() {
     if (this.bitcoinValues) return this.bitcoinValues[0];
   }
+
+  async onAddCoins() {
+    const updateUser = { ...this.user, coins: this.user.coins + this.coins }
+    await this.userService.updateUser(updateUser)
+    this.coins = 0;
+  }
+
 
 }

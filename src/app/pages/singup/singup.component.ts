@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { User } from 'src/app/model/user.model';
 import { UserService } from 'src/app/services/user.service';
 
@@ -9,20 +10,19 @@ import { UserService } from 'src/app/services/user.service';
 })
 export class SingupComponent implements OnInit {
 
-  user = {
-    name: "",
-    username: "",
-    password: "",
-    coins: 0,
-    moves: [] = []
-  }
+  user: User
 
-  constructor(private userService: UserService) { }
+  constructor(private userService: UserService, private router: Router) { }
 
   ngOnInit(): void {
+    this.user = this.userService.getNewUser()
   }
+
+
 
   onSignupUser() {
     this.userService.signup(this.user)
+    this.user = this.userService.getNewUser()
+    this.router.navigate(['/'])
   }
 }

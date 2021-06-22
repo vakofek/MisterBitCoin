@@ -19,6 +19,8 @@ import { HeaderComponent } from './cmps/header/header.component';
 import { LoginComponent } from './pages/login/login.component';
 import { ContactEditComponent } from './pages/contact-edit/contact-edit.component';
 import { SingupComponent } from './pages/singup/singup.component';
+import { TransferListComponent } from './cmps/transfer-list/transfer-list.component';
+import { TranserPreviewComponent } from './cmps/transer-preview/transer-preview.component';
 
 @NgModule({
   declarations: [
@@ -35,7 +37,9 @@ import { SingupComponent } from './pages/singup/singup.component';
     HeaderComponent,
     LoginComponent,
     ContactEditComponent,
-    SingupComponent
+    SingupComponent,
+    TransferListComponent,
+    TranserPreviewComponent
   ],
   imports: [
     BrowserModule,
