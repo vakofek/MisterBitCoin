@@ -10,10 +10,16 @@ export class AppComponent {
   title = 'MisterBitCoin';
 
   constructor(private userService: UserService) { }
-  
+  isScreenOpen = 'close'
+
   ngOnInit(): void {
     this.userService.loadUsersDB();
   }
+
+  toggleSideNav(){
+    this.isScreenOpen = (this.isScreenOpen === 'close') ? '' : 'close'
+  }
+
   // selectedPage: string = 'home'
 
   // onSetPage(selectedPage: string) {

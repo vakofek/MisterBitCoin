@@ -1,5 +1,19 @@
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600&display=swap");
 
+.main-screen{
+    background-color: rgba(0, 0, 0, 0.363);
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    cursor: pointer;
+
+    &.close{
+        display: none;
+    }
+}
 
 .app {
     font-family: Montserrat, sans-serif;

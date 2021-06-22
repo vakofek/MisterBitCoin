@@ -1,7 +1,11 @@
+@import "../../../styles/setup/mixins";
+@import "../../../styles/setup/variables";
+
 .home-page {
     main {
         margin-bottom: 40px;
         display: flex;
+        flex-direction: row;
         align-items: flex-start;
         justify-content: space-between;
         gap: 10vw;
@@ -9,6 +13,31 @@
         > * {
             display: flex;
             width: 35%;
+        }
+
+        @include for-mobile-layout {
+            flex-direction: column;
+            align-items: center;
+
+            > * {
+                width: 100%;
+            }
+        }
+        @include for-narrow-layout {
+            flex-direction: column;
+            align-items: center;
+
+            > * {
+                width: 100%;
+            }
+        }
+        @include for-wide-layout {
+            flex-direction: row;
+            align-items: flex-start;
+
+            > * {
+                width: 35%;
+            }
         }
         > div:first-child {
             display: flex;
@@ -20,6 +49,7 @@
 
         .user-details {
             display: flex;
+            flex-direction: row;
             gap: 20px;
             align-items: center;
             img {
@@ -27,6 +57,16 @@
                 height: 120px;
                 border-radius: 50%;
                 object-fit: contain;
+            }
+
+            @include for-mobile-layout {
+                flex-direction: column;
+            }
+            @include for-narrow-layout {
+                flex-direction: column;
+            }
+            @include for-wide-layout {
+                flex-direction: row;
             }
         }
         .add-to-wallet {
@@ -46,6 +86,16 @@
                     padding: 10px 10px;
                 }
             }
+
+            @include for-mobile-layout {
+                align-items: center;
+            }
+            @include for-narrow-layout {
+                align-items: center;
+            }
+            @include for-wide-layout {
+                align-items: flex-start;
+            }
         }
     }
 
@@ -55,18 +105,34 @@
         padding: 125px 0;
 
         h1 {
-            font-size: 110px;
-            line-height: 120px;
+            font-size: 90px;
+            line-height: 95px;
             font-weight: 200;
             max-width: 60vw;
             margin-left: 4rem;
         }
         p {
-            color: rgb(7, 7, 7);
+            color: rgb(39, 39, 39);
             font-family: Montserrat, sans-serif;
             font-size: 28px;
             font-weight: 600;
             margin-left: 4rem;
+        }
+
+        @include for-mobile-layout {
+            h1 {
+                font-size: 50px;
+            }
+        }
+        @include for-narrow-layout {
+            h1 {
+                font-size: 60px;
+            }
+        }
+        @include for-wide-layout {
+            h1 {
+                font-size: 90px;
+            }
         }
     }
 }

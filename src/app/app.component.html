@@ -1,7 +1,7 @@
 <div class="app">
 
-    <app-header></app-header>
-
+    <app-header [isScreenOpen] = "isScreenOpen" (toggleSideNav)="toggleSideNav()"></app-header>
+    <div (click)="toggleSideNav()" class="main-screen {{isScreenOpen}}"></div>
     <router-outlet></router-outlet>
 
     <!-- <home-page *ngIf="selectedPage === 'home'"></home-page>
