@@ -2,10 +2,21 @@
     <button (click)="onGoBack()">Go Back</button>
     <a [routerLink]="['/contact' , contact._id, 'edit']">Edit</a>
 
-    <img src="https://randomuser.me/api/portraits/men/1.jpg" />
+    <img [src]="contact.imgUrl" />
     <h2>{{contact.name}}</h2>
     <h4>{{contact.email}}</h4>
     <h4>{{contact.phone}}</h4>
     <button (click)="onGoNeighborContact('back')">previous</button>
     <button (click)="onGoNeighborContact('next')">Next</button>
+
+    <p *ngIf="loggedInUser">Transfer to {{contact.name}} <button (click)="onTransferChange(-1)">-</button>
+        <span>{{coinsToTransfer}}</span>
+        <button (click)="onTransferChange(1)">+</button>
+    </p>
+    <button *ngIf="loggedInUser" (click)="onTransferCoins()">Transfer</button>
+
+    <div class="user-transfer">
+        <transfer-list *ngIf="moves.length" [moves]="moves" title="Your last moves to {{contact.name}}">
+        </transfer-list>
+    </div>
 </div>
