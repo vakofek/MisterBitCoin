@@ -1,8 +1,20 @@
 <div class="chart-page">
-    <h1>Chart Page</h1>
-   
-    <!-- <google-chart [title]="marketPriceChart.title" [type]="marketPriceChart.chartType" [data]="marketPriceChart.data"
-        [columns]="marketPriceChart.columns">
-    </google-chart> -->
-    
+    <!-- <h1>Chart Page</h1> -->
+    <google-chart
+    [height]="500"
+    [width]="1000"
+    [title]= "marketPriceChart.title"
+    [data]="marketPriceChart.data"
+    [options]="marketPriceChart.options"
+       >
+    </google-chart>
+    <google-chart
+    [height]="500"
+    [width]="1000"
+    [title]= "chartMktPrice.title"
+     [type]="chartMktPrice.type"
+      [data]="chartMktPrice.data"
+       [options]="chartMktPrice.options"
+       >
+    </google-chart>
 </div>
