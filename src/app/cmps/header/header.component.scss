@@ -3,7 +3,7 @@
 @import "../../../styles/setup/variables";
 
 Header {
-    height: 150px;
+    height: 110px;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -22,6 +22,7 @@ Header {
         position: absolute;
         left: 50%;
         transform: translateX(-50%);
+        transition: transform 0.4s ease-in-out;
     }
 
     @include for-mobile-layout {
@@ -33,7 +34,7 @@ Header {
             display: flex;
             flex-direction: column;
             align-items: center;
-            gap: 10px;
+            gap: 20px;
             position: fixed;
             top: 0;
             right: 0;
@@ -62,7 +63,7 @@ Header {
             display: flex;
             flex-direction: column;
             align-items: center;
-            gap: 10px;
+            gap: 20px;
             position: fixed;
             top: 0;
             right: 0;
@@ -115,18 +116,17 @@ Header {
         border: none;
         background-color: transparent;
         color: rgb(100, 100, 100);
-        font-family: Montserrat, sans-serif;
+           font-family: Lato-regular, sans-serif;
         font-size: 18px;
         font-weight: 600;
         cursor: pointer;
         padding: 12px 25px;
         border-radius: 30px;
-        transition: color 0.4s ease-in-out, background-color 0.4s ease-in-out;
+        transition: color 0.2s ease-in-out;
         text-decoration: none;
 
         &:hover {
-            background-color: rgb(32, 32, 32);
-            color: white;
+            color: rgb(56, 56, 56);
         }
     }
 
@@ -146,10 +146,12 @@ Header {
         display: flex;
         align-items: center;
         gap: 20px;
+        color: $clr-blue;
 
         h1 {
             margin: 0 0;
             font-family: Prosto One, sans-serif;
+            font-size: 25px;
         }
     }
 

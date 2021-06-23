@@ -1,36 +1,41 @@
-@import "../../../styles/setup/mixins";
-@import "../../../styles/setup/variables";
+// @import "../../../styles/setup/mixins";
+// @import "../../../styles/setup/variables";
+@import "../../../styles/setup/typography";
 
 .transfer-preview {
+    font-family: Lato-bold, sans-serif;
     display: flex;
-    flex-direction: column;
     align-items: flex-start;
+    justify-content: space-between;
    
-    h4 {
+    h4 {  
         margin: 0 0;
         padding: 0 0;
         font-weight: inherit;
 
 
         &:first-child {
-            font-size: 18px;
+            font-family: Lato-black, sans-serif;
+            font-size: 16px;
             line-height: 22px;
             margin-bottom: 5px;
-            span:first-child {
-                color: rgb(126, 180, 63);
-            }
-            span:last-child {
-                color: rgb(131, 131, 131);
-            }
+   
         }
+        
         &:last-child {
-            font-size: 14px;
+            font-size: 12px;
             margin-top: 5px;
-            color: rgb(131, 131, 131);
+            color: rgb(139, 139, 139);
         }
     }
 
-    border-bottom: 1px solid rgb(138, 138, 138);
-    padding: 10px 30px;
+    h3{
+        display: flex;
+        gap: 10px;
+        font-size: 14px;
+    }
+
+
+    padding: 10px 0px;
     font-weight: 400;
 }

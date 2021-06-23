@@ -1,7 +1,15 @@
 @import "../../../styles/setup/mixins";
 @import "../../../styles/setup/variables";
+@import "../../../styles/setup/typography";
 
 .home-page {
+    font-family: Lato-regular, sans-serif;
+
+    h3 {
+        font-size: 22px;
+        margin: 20px 0 20px 0;
+    }
+
     main {
         margin-bottom: 40px;
         display: flex;
@@ -42,32 +50,79 @@
         > div:first-child {
             display: flex;
             flex-direction: column;
+
+            > span {
+                display: flex;
+                align-items: flex-end;
+                justify-content: space-between;
+                margin: 20px 0;
+
+                h3 {
+                    margin: 0 0;
+                }
+
+                a {
+                    text-decoration: none;
+                    font-size: 12px;
+                    font-family: Lato-bold, sans-serif;
+                    color: gray;
+
+                    &:hover{
+                        text-decoration: underline;
+                    }
+
+                }
+            }
         }
         > :last-child {
             flex: 1;
         }
 
         .user-details {
-            display: flex;
-            flex-direction: row;
-            gap: 20px;
-            align-items: center;
-            img {
-                width: 120px;
-                height: 120px;
-                border-radius: 50%;
-                object-fit: contain;
+            color: $clr-light;
+            background-color: $clr-blue;
+            padding: 20px;
+            border-radius: 20px;
+
+            > div {
+                display: flex;
+                flex-direction: row;
+                gap: 20px;
+                align-items: center;
+
+                img {
+                    width: 60px;
+                    height: 60px;
+                    border-radius: 50%;
+                    object-fit: contain;
+                    box-shadow: 0 0 0 2px #ffffff26;
+                }
+
+                h4 {
+                    font-family: Lato-light, sans-serif;
+                    font-size: 18px;
+                    margin: 10px 0;
+                    text-transform: capitalize;
+
+                    &:last-of-type {
+                        font-size: 14px;
+                    }
+                }
+            }
+            h2 {
+                margin-top: 10px;
+                margin-bottom: 0px;
             }
 
-            @include for-mobile-layout {
-                flex-direction: column;
-            }
-            @include for-narrow-layout {
-                flex-direction: column;
-            }
-            @include for-wide-layout {
-                flex-direction: row;
-            }
+            // @include for-mobile-layout {
+            //     flex-direction: column;
+            // }
+            // @include for-narrow-layout {
+            //     flex-direction: column;
+            // }
+            // @include for-wide-layout {
+            //     flex-direction: row;
+            // }
         }
         .add-to-wallet {
             display: flex;
@@ -75,15 +130,40 @@
             align-items: flex-start;
             gap: 10px;
 
+            h3 {
+                font-size: 22px;
+                margin: 40px 0 10px 0;
+            }
+
             div {
                 display: flex;
                 align-items: center;
+                justify-content: space-between;
+                width: 100%;
                 gap: 5px;
+
                 input {
+                    flex: 1;
                     padding: 10px 20px;
+                    border: 1px solid rgb(197, 197, 197);
+                    border-radius: 5px;
+                    font-family: Lato-regular, sans-serif;
+                    font-size: 14px;
                 }
                 button {
+                    font-size: 14px;
                     padding: 10px 10px;
+                    border: none;
+                    border-radius: 5px;
+                    background-color: $clr-blue;
+                    color: $clr-light;
+                    font-family: Lato-bold, sans-serif;
+                    cursor: pointer;
+                    transition: background-color 0.2s ease-in-out;
+
+                    &:hover {
+                        background-color: #3b54c7;
+                    }
                 }
             }
 
@@ -113,7 +193,7 @@
         }
         p {
             color: rgb(39, 39, 39);
-            font-family: Montserrat, sans-serif;
+            font-family: Lato-regular, sans-serif;
             font-size: 28px;
             font-weight: 600;
             margin-left: 4rem;

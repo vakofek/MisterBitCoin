@@ -1,25 +1,52 @@
+@import "../../../styles/setup/typography";
+@import "../../../styles/setup/variables";
+
 .contact-preview {
-    border: 1px solid #d1d1d1;
+    font-family: Lato-regular, sans-serif;
     border-radius: 60px;
-    padding: 10px 30px;
-    width: 30vw;
+    min-width: 30vw;
     display: flex;
     align-items: center;
-    gap: 20px;
+    justify-content: space-between;
+
+    >div{
+        display: flex;
+        align-items: center;
+        gap: 20px;
+    }
+
+    a{
+        color: $clr-blue;
+        font-family: Lato-bold, sans-serif;
+        font-size: 12px;
+        text-decoration: none;
+    }
 
     cursor: pointer;
     transition: box-shadow 0.3s ease-in-out;
-    &:hover {
-        box-shadow: 0 0 10px 0 #0000003d;
-    }
+
+
     img {
         height: 50px;
         width: 50px;
-        border-radius: 50%;
+        border-radius: 8px;
         box-shadow: 0 0 7px 0 #0000003d;
     }
 
-    h2 {
-        margin: 0 0;
+    div{
+
+        
+        h2 {
+            font-family: Lato-black, sans-serif;
+            font-size: 16px;
+            line-height: 22px;
+            margin-bottom: 5px;
+
+        }
+        h4{
+            font-size: 12px;
+            margin-top: 5px;
+            color: rgb(139, 139, 139);
+        }
     }
 }

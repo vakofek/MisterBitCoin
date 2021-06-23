@@ -1,4 +1,10 @@
 <div class="contact-preview" [routerLink]="['/contact' , contact._id]">
-    <img [src]="contact.imgUrl" />
-    <h2>{{contact.name}}</h2>
+    <div>
+        <img [src]="contact.imgUrl" />
+        <div>
+            <h2>{{contact.name}}</h2>
+            <h4>{{contact.email}}</h4>
+        </div>
+    </div>
+    <a [routerLink]="['/contact' , contact._id, 'edit']">Edit</a>
 </div>

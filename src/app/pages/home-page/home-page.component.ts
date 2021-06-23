@@ -4,6 +4,8 @@ import { User } from '../../model/user.model';
 import { UserService } from 'src/app/services/user.service';
 import { BitconService } from 'src/app/services/bitcoin.service';
 import { ThrowStmt } from '@angular/compiler';
+import { Contact } from 'src/app/model/contact.model';
+import { ContactService } from 'src/app/services/contact.service';
 
 @Component({
   selector: 'home-page',
@@ -12,20 +14,37 @@ import { ThrowStmt } from '@angular/compiler';
 })
 export class HomePageComponent implements OnInit {
 
-  constructor(private userService: UserService, private bitconService: BitconService) { }
-  subscription: Subscription;
+  constructor(
+    private userService: UserService, 
+    private contactService: ContactService, 
+    private bitconService: BitconService
+    
+    ) { }
+  userSubscription: Subscription;
+  contactSubscription:Subscription
   user: User = null
   // bitcoinValues = this.bitconService.getBitcoinValue()
+  
   bitcoinValues: any = null
   coins: number = 0
+  contacts:Contact[]
+ 
 
   ngOnInit(): void {
-    this.subscription = this.userService.user$.subscribe((user: User) => { this.user = user });
+    this.userSubscription = this.userService.user$.subscribe((user: User) => { this.user = user });
     this.bitcoinValues = this.bitconService.getMarketPrice();
+    this.contactService.loadContacts()
+    this.contactSubscription = this.contactService.contacts$.subscribe(contacts=>{
+      this.contacts = contacts.filter((contact, idx)=>{
+        return (idx < 4) && contact
+      })
+      console.log( this.contacts);
+      
+    })
   }
 
   ngOnDestroy(): void {
-    this.subscription.unsubscribe();
+    this.userSubscription.unsubscribe();
   }
 
   getCurrValue() {

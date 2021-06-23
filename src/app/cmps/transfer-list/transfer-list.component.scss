@@ -1,9 +1,15 @@
 .transfer-list {
+    margin: 20px 0px;
     display: flex;
     flex-direction: column;
     width: 100%;
 
-    h3 {
-        padding: 0 30px;
+    h3{
+        font-size: 22px;
+        margin: 20px 0 10px 0;
+    }
+
+    >transer-preview:not(:last-child){
+        border-bottom: 1px solid rgba(138, 138, 138, 0.239);
     }
 }

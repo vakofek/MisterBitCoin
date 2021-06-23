@@ -1,5 +1,5 @@
 <div class="contact-page">
-        <a routerLink="/edit">Add Contact</a>
+        <a routerLink="/edit">+</a>
         <contact-filter [filterBy]="filterBy" (onFilter)="onSetFilter($event)"></contact-filter>
         <contact-list [contacts]="contacts$|async"></contact-list>
   

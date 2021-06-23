@@ -20,7 +20,7 @@
     <button *ngIf="loggedInUser" (click)="onTransferCoins()">Transfer</button>
 
     <div class="user-transfer">
-        <transfer-list *ngIf="moves.length" [moves]="moves" title="Your last moves to {{contact.name}}">
+        <transfer-list *ngIf="moves.length" [moves]="moves" title="Your last moves to {{contact.name}}" cardLimit="4">
         </transfer-list>
     </div>
 </div>

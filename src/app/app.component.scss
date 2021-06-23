@@ -1,6 +1,8 @@
-@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600&display=swap");
+@import "../styles/setup/typography";
+@import "../styles/setup/variables";
+@import "../styles/setup/mixins";
 
-.main-screen{
+.main-screen {
     background-color: rgba(0, 0, 0, 0.363);
     position: fixed;
     z-index: 1;
@@ -10,16 +12,24 @@
     bottom: 0;
     cursor: pointer;
 
-    &.close{
+    &.close {
         display: none;
     }
 }
 
 .app {
-    font-family: Montserrat, sans-serif;
+    font-family: Lato-regular, sans-serif;
     border-radius: 40px;
     box-shadow: 0 0 15px 0 #00000026;
-    margin:5vh 40px;
+    margin: 5vh 40px;
     background-color: #fff;
     min-height: 90vh;
+
+    @include for-mobile-layout {
+        margin: 0 0;
+        border-radius: 0;
+    }
+    @include for-narrow-layout {
+        margin: 5vh 40px;
+    }
 }

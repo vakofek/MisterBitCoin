@@ -2,26 +2,33 @@
 
     <main class="container" *ngIf="user">
         <div>
+            <span>
+                <h3>bitApp balance</h3>
+                <a routerLink="contact" routerLinkActive="active">Transfer money</a>
+            </span>
             <div class="user-details">
-                <img [src]="user.imgUrl" />
                 <div>
-                    <h2>Hello {{user.name}}</h2>
-                    <h4>Coins: {{user.coins}}</h4>
-                    <h4>BTC: {{getCurrValue().y}}</h4>
+                    <img [src]="user.imgUrl" />
+                    <div>
+                        <h4>Hello {{user.name}}</h4>
+                        <h4> ฿ {{user.coins}} BTC</h4>
+                    </div>
                 </div>
+                <h2>{{(getCurrValue().y * user.coins) | currency}} </h2>
             </div>
             <div class="add-to-wallet">
-                <h3>Here you can deposit coins</h3>
+                <h3>Coins deposit</h3>
                 <div>
                     <input type="number" name="coins" [(ngModel)]="coins">
-                    <button (click)="onAddCoins()">Add</button>
+                    <button (click)="onAddCoins()">Deposit</button>
                 </div>
             </div>
+            <transfer-list [moves]="user.moves" title="Recent Activity" cardLimit="4"></transfer-list>
         </div>
-        <transfer-list [moves]="user.moves" title="Your last moves"></transfer-list>
+        <contact-list [contacts]="contacts"></contact-list>
     </main>
 
-    <div class="hero">
+    <div class="hero" *ngIf="!user">
         <h1>The next generation payment method</h1>
         <p>The most hype generation payment</p>
     </div>
