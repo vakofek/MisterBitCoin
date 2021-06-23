@@ -3,7 +3,7 @@
     <main class="container" *ngIf="user">
         <div>
             <span>
-                <h3>bitApp balance</h3>
+                <h3>BitApp balance</h3>
                 <a routerLink="contact" routerLinkActive="active">Transfer money</a>
             </span>
             <div class="user-details">
@@ -25,7 +25,13 @@
             </div>
             <transfer-list [moves]="user.moves" title="Recent Activity" cardLimit="4"></transfer-list>
         </div>
-        <contact-list [contacts]="contacts"></contact-list>
+        <div class="contact-container">
+            <span>
+                <h3>Contacts</h3>
+                <a routerLink="contact" routerLinkActive="active">more</a>
+            </span>
+            <contact-list [contacts]="contacts"></contact-list>
+        </div>
     </main>
 
     <div class="hero" *ngIf="!user">

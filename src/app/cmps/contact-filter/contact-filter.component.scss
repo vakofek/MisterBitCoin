@@ -1,13 +1,18 @@
+@import "../../../styles/setup/variables";
+@import "../../../styles/setup/typography";
+
 .contact-filter {
-    display:flex;
+    display: flex;
     justify-content: center;
     margin-bottom: 30px;
+    min-width: 350px;
+    
     input {
-        width: 30vw;
-        padding: 20px 25px;
+        width: 100%;
+        font-family: Lado-regular, sans-serif;
+        padding: 15px 25px;
         font-size: 22px;
-        font-weight: 400;
-        border-radius:60px;
+        border-radius: 7px;
         border: 1px solid rgb(184, 184, 184);
     }
 }

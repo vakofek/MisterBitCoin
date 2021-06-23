@@ -1,6 +1,6 @@
 <div class="contact-details">
 
-    <div class="container">
+    <div>
         <button (click)="onGoBack()">Back</button>
         <a [routerLink]="['/contact' , contact._id, 'edit']">Edit</a>
     </div>
@@ -8,7 +8,8 @@
     <h2>{{contact.name}}</h2>
     <h4>{{contact.email}}</h4>
     <h4>{{contact.phone}}</h4>
-    <div>
+
+    <div class="btn-container">
         <button (click)="onGoNeighborContact('back')">previous</button>
         <button (click)="onGoNeighborContact('next')">Next</button>
     </div>

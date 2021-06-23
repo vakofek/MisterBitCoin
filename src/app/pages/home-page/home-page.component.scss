@@ -20,32 +20,20 @@
 
         > * {
             display: flex;
-            width: 35%;
+            min-width: 350px;
         }
 
         @include for-mobile-layout {
             flex-direction: column;
             align-items: center;
-
-            > * {
-                width: 100%;
-            }
         }
         @include for-narrow-layout {
             flex-direction: column;
             align-items: center;
-
-            > * {
-                width: 100%;
-            }
         }
         @include for-wide-layout {
             flex-direction: row;
             align-items: flex-start;
-
-            > * {
-                width: 35%;
-            }
         }
         > div:first-child {
             display: flex;
@@ -67,10 +55,9 @@
                     font-family: Lato-bold, sans-serif;
                     color: gray;
 
-                    &:hover{
+                    &:hover {
                         text-decoration: underline;
                     }
-
                 }
             }
         }
@@ -113,16 +100,6 @@
                 margin-top: 10px;
                 margin-bottom: 0px;
             }
-
-            // @include for-mobile-layout {
-            //     flex-direction: column;
-            // }
-            // @include for-narrow-layout {
-            //     flex-direction: column;
-            // }
-            // @include for-wide-layout {
-            //     flex-direction: row;
-            // }
         }
         .add-to-wallet {
             display: flex;
@@ -215,8 +192,47 @@
             }
         }
     }
+
+    .contact-container {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-end;
+
+        > span {
+            display: flex;
+            align-items: flex-end;
+            justify-content: space-between;
+            margin: 20px 0;
+            min-width: 350px;
+
+            h3 {
+                margin: 0 0;
+            }
+
+            a {
+                text-decoration: none;
+                font-size: 12px;
+                font-family: Lato-bold, sans-serif;
+                color: gray;
+
+                &:hover {
+                    text-decoration: underline;
+                }
+            }
+        }
+    }
 }
 
 .container {
     margin: 0px 4rem;
+
+    @include for-mobile-layout {
+        margin: 0px 1rem;
+    }
+    @include for-narrow-layout {
+        margin: 0px 2rem;
+    }
+    @include for-wide-layout {
+        margin: 0px 4rem;
+    }
 }

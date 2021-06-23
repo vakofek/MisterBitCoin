@@ -47,7 +47,7 @@ Header {
                 transform: translateX(100%);
             }
 
-            .login-side-nav-btn-container{
+            .login-side-nav-btn-container {
                 display: flex;
                 flex-direction: column;
                 align-items: center;
@@ -76,7 +76,7 @@ Header {
                 transform: translateX(100%);
             }
 
-            .login-side-nav-btn-container{
+            .login-side-nav-btn-container {
                 display: flex;
                 flex-direction: column;
                 align-items: center;
@@ -105,7 +105,7 @@ Header {
                 transform: translateX(-50%);
             }
 
-            .login-side-nav-btn-container{
+            .login-side-nav-btn-container {
                 display: none;
             }
         }
@@ -116,12 +116,11 @@ Header {
         border: none;
         background-color: transparent;
         color: rgb(100, 100, 100);
-           font-family: Lato-regular, sans-serif;
+        font-family: Lato-regular, sans-serif;
         font-size: 18px;
         font-weight: 600;
         cursor: pointer;
         padding: 12px 25px;
-        border-radius: 30px;
         transition: color 0.2s ease-in-out;
         text-decoration: none;
 
@@ -133,9 +132,11 @@ Header {
     .side-nav-btn {
         @include for-mobile-layout {
             display: block;
+            padding: 0 0;
         }
         @include for-narrow-layout {
             display: block;
+            padding: 0 0;
         }
         @include for-wide-layout {
             display: none;
@@ -146,9 +147,13 @@ Header {
         display: flex;
         align-items: center;
         gap: 20px;
-        color: $clr-blue;
 
+        a{
+            padding: 0 0;
+        }
+        
         h1 {
+            color: $clr-blue;
             margin: 0 0;
             font-family: Prosto One, sans-serif;
             font-size: 25px;
@@ -158,11 +163,6 @@ Header {
     .login-container {
         display: flex;
         gap: 25px;
-
-        button:last-child {
-            color: white;
-            background-color: rgb(14, 13, 13);
-        }
     }
 
     @include for-mobile-layout {
@@ -184,4 +184,14 @@ Header {
 
 .container {
     margin: 0px 4rem;
+
+    @include for-mobile-layout {
+        margin: 0px 1rem;
+    }
+    @include for-narrow-layout {
+        margin: 0px 2rem;
+    }
+    @include for-wide-layout {
+        margin: 0px 4rem;
+    }
 }
