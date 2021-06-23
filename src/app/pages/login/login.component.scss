@@ -4,24 +4,58 @@
     align-items: center;
     gap: 20px;
 
-    p{
+    h2{
+        margin-top: 20px ;
+        margin-bottom: 0;
+    }
+
+    p {
         text-align: center;
         color: red;
         font-size: 18px;
     }
 
-    form{
+    form {
         margin-top: 20px;
         display: flex;
         flex-direction: column;
         gap: 5px;
 
-        input{
+        input {
             padding: 10px 20px;
             font-size: 18px;
-            font-family: inherit ;
+            font-family: inherit;
             border-radius: 7px;
             border: 1px solid rgb(163, 163, 163);
+        }
+
+        button {
+            margin-top: 10px;
+            padding: 10px 20px;
+            font-size: 16px;
+            font-family: inherit;
+            font-weight: 600;
+            border: none;
+            box-shadow: 0 0 4px #00000059;
+            cursor: pointer;
+
+            &:hover {
+                box-shadow: 0 0 4px #00000079;
+            }
+        }
+    }
+
+    a {
+        margin-top: 10px;
+        align-self: flex-start;
+        font-size: 12px;
+        font-family: inherit;
+        font-weight: 600;
+        text-decoration: none;
+        color: rgb(42, 42, 42);
+
+        &:hover{
+            text-decoration: underline; 
         }
     }
 }
