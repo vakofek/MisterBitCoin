@@ -28,7 +28,7 @@ export class BitconService {
     getTradeVolume() {
         let tradeVolumes = this.storageService.load(TRADE_VOLUME);
         if (!tradeVolumes || tradeVolumes === 0) {
-            const bitcoinValues$ = this.http.get<{ values: [] }>('https://api.blockchain.info/charts/market-price?timespan=5months&format=json&cors=true')
+            const bitcoinValues$ = this.http.get<{ values: [] }>('https://api.blockchain.info/charts/trade-volume?timespan=5months&format=json&cors=true')
             bitcoinValues$.subscribe(data => {
                 tradeVolumes = data.values
                 this.storageService.save(TRADE_VOLUME, tradeVolumes)

@@ -14,9 +14,13 @@
         <button (click)="onGoNeighborContact('next')">Next</button>
     </div>
 
-    <p *ngIf="loggedInUser">Transfer to {{contact.name}} <button (click)="onTransferChange(-1)">-</button>
-        <span>{{coinsToTransfer}}</span>
-        <button (click)="onTransferChange(1)">+</button>
+    <p class="transfer-action-container" *ngIf="loggedInUser">
+        <span>Transfer to {{contact.name}}</span>
+        <span>
+            <button (click)="onTransferChange(-1)">-</button>
+            <span>{{coinsToTransfer}}</span>
+            <button (click)="onTransferChange(1)">+</button>
+        </span>
     </p>
     <button *ngIf="loggedInUser" (click)="onTransferCoins()">Transfer</button>
 

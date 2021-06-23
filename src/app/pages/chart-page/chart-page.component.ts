@@ -11,37 +11,44 @@ export class ChartPageComponent implements OnInit {
 
   constructor(private bitconService: BitconService) { }
 
-  marketPriceChart = {
-    title: 'Market Price',
+  chartTradeVolume = {
+    title: 'Trade Volume',
     chartType: 'LineChart',
-    data: this.bitconService.getMarketPrice(),
-    // columns: Object.keys(this.bitconService.getMarketPrice()),
+    type: ChartType.AreaChart,
+    data: this.getTradeVolumeData(),
     options: {
       colors: ['#f2931b'],
     }
-    
   }
+
   chartMktPrice = {
     title: 'Bitcoin Value',
     type: ChartType.AreaChart,
-    data: this.getData(),
+    data: this.getMarketPriceData(),
     columnNames: ['Date', 'Price'],
     options: {
       colors: ['#f2931b'],
     }
-  };
+  }
 
-  getData() {
+  getMarketPriceData() {
     const data= this.bitconService.getMarketPrice()
-    return data.map((d:any)=>{
-      return[new Date(d.x*1000).toLocaleString(),d.y]
+    return data.map((data:{x: number , y: number})=>{
+      return[new Date(data.x*1000).toLocaleString('en-US', {year: 'numeric' , month: 'short' , day: 'numeric' }),data.y]
 
     })
   }
+  getTradeVolumeData() {
+    const data= this.bitconService.getTradeVolume()
+    return data.map((data:{x: number , y: number})=>{
+      return[new Date(data.x*1000).toLocaleString('en-US', {year: 'numeric' , month: 'short' , day: 'numeric' }),data.y]
+    })
+  }
+
   ngOnInit(): void {
     console.log(this.bitconService.getMarketPrice());
-    console.log(this.marketPriceChart.data);
-    console.log(this.getData());
+    console.log(this.chartTradeVolume.data);
+    console.log(this.getMarketPriceData());
     
     
   }

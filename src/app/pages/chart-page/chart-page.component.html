@@ -1,20 +1,11 @@
 <div class="chart-page">
-    <!-- <h1>Chart Page</h1> -->
-    <google-chart
-    [height]="500"
-    [width]="1000"
-    [title]= "marketPriceChart.title"
-    [data]="marketPriceChart.data"
-    [options]="marketPriceChart.options"
-       >
-    </google-chart>
-    <google-chart
-    [height]="500"
-    [width]="1000"
-    [title]= "chartMktPrice.title"
-     [type]="chartMktPrice.type"
-      [data]="chartMktPrice.data"
-       [options]="chartMktPrice.options"
-       >
-    </google-chart>
+
+   <google-chart [height]="400" [width]="700" [title]="chartTradeVolume.title" [type]="chartTradeVolume.type" [data]="chartTradeVolume.data"
+      [options]="chartTradeVolume.options">
+   </google-chart>
+
+   <google-chart [height]="400" [width]="700" [title]="chartMktPrice.title" [type]="chartMktPrice.type"
+      [data]="chartMktPrice.data" [options]="chartMktPrice.options">
+   </google-chart>
+
 </div>
