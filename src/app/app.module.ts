@@ -39,16 +39,16 @@ import { TranserPreviewComponent } from './cmps/transer-preview/transer-preview.
     ContactEditComponent,
     SingupComponent,
     TransferListComponent,
-    TranserPreviewComponent
+    TranserPreviewComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
     GoogleChartsModule,
-    HttpClientModule
+    HttpClientModule,
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}
